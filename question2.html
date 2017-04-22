@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+    
+  
+    
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.js"></script>
+    
+  
+
+  <style type="text/css">
+    html,
+body,
+.container,
+.view-animate {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: normal;
+}
+
+.button {
+    background-color: #fff;
+    border-radius: 5px;
+    color: #333;
+    display: inline-block;
+    float: right;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* panels */
+
+.left,
+.right {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 5%;
+}
+
+.left {
+    background-color: #fff;
+    text-align: center;
+}
+
+.right {
+    background-color: #409EBD;
+    color: #fff;
+}
+
+/* animate */
+
+.view-animate {
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    width: 100%;
+}
+
+.view-animate.ng-enter {
+    opacity: 0;
+}
+
+.view-animate.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .left,
+    .right {
+        float: left;
+        height: 100%;
+        width: 50%;
+    }
+}
+  </style>
+
+  <title>AngularJS Quiz example</title>
+
+  
+    
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+
+var app = angular.module("myApp", ['ngRoute', 'ngAnimate']);
+
+app.config(function ($routeProvider) {
+    $routeProvider.when('/welcome', {
+        templateUrl: 'welcome.html'
+    })
+    .when('/question1', {
+        templateUrl: 'question1.html'
+    })
+	.when('/question2', {
+        templateUrl: 'question2.html'
+    })
+    .when('/question3', {
+        templateUrl: 'question3.html'
+    })
+	.otherwise({
+        redirectTo: '/welcome'
+    });
+});
+//]]> 
+
+</script>
+
+  
+</head>
+
+<body ng-app="myApp">
+  <div class="container">
+    <div class="view-animate" ng-view></div>
+</div>
+
+<script type="text/ng-template" id="welcome.html">
+    <div class="left">
+        <h3>Welcome!</h3>
+    </div>
+    <div class="right">
+        <p><a href="#/question1" class="button">Start the quiz</a></p>
+    </div>
+</script>
+<script type="text/ng-template" id="question1.html">
+    <div class="left">
+        <h3>What's your favourite cheese?</h3>
+    </div>
+    <div class="right">
+        <p>
+            <input type="radio" name="question1" id="answer1" value="answer1" />
+            <label for="answer1">Cheddar</label>
+        </p>
+        <p>
+            <input type="radio" name="question1" id="answer2" value="answer2" />
+            <label for="answer2">Edam</label>
+        </p>
+        <p>
+            <input type="radio" name="question1" id="answer3" value="answer3" />
+            <label for="answer3">Brie</label>
+        </p>
+        <p><a href="#/question2" class="button">Next</a></p>
+    </div>
+</script>
+<script type="text/ng-template" id="question2.html">
+    <div class="left">
+        <h3>Which band is American?</h3>
+    </div>
+    <div class="right">
+        <p>
+            <input type="radio" name="question1" id="answer1" value="answer1" />
+            <label for="answer1">Muse</label>
+        </p>
+        <p>
+            <input type="radio" name="question1" id="answer2" value="answer2" />
+            <label for="answer2">Smashing Pumpkins</label>
+        </p>
+        <p>
+            <input type="radio" name="question1" id="answer3" value="answer3" />
+            <label for="answer3">Radiohead</label>
+        </p>
+        <p><a href="#/question3" class="button">Next</a></p>
+    </div>
+</script>
+<script type="text/ng-template" id="question3.html">
+    <div class="left">
+        <h3>Who is your favourite comedian?</h3>
+    </div>
+    <div class="right">
+        <p>
+            <input type="radio" name="question1" id="answer1" value="answer1" />
+            <label for="answer1">Dave Chappelle</label>
+        </p>
+        <p>
+            <input type="radio" name="question1" id="answer2" value="answer2" />
+            <label for="answer2">Ricky Gervais</label>
+        </p>
+        <p>
+            <input type="radio" name="question1" id="answer3" value="answer3" />
+            <label for="answer3">Woody Allen</label>
+        </p>
+        <p><a href="#/welcome" class="button">Finish</a></p>
+    </div>
+</script>
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "3k34hnjk"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
+
